@@ -1,65 +1,90 @@
-// 1. Стрелочки в секциях и расписании
-let sectionsTrack = document.querySelector('.sections-slider-track');
-let sectionsNext = document.querySelector('.sections .next-btn');
-let sectionsPrev = document.querySelector('.sections .prev-btn');
+// ==========================================
+// 1. СТРЕЛОЧКИ В СЕКЦИЯХ И РАСПИСАНИИ
+// ==========================================
+const sectionsTrack = document.querySelector('.sections-slider-track');
+const sectionsNext = document.querySelector('.sections .next-btn');
+const sectionsPrev = document.querySelector('.sections .prev-btn');
 
-sectionsNext.onclick = function() {
-    sectionsTrack.scrollLeft += 450;
-};
-sectionsPrev.onclick = function() {
-    sectionsTrack.scrollLeft -= 450;
-};
+if (sectionsNext) {
+    sectionsNext.onclick = function() {
+        sectionsTrack.scrollLeft = sectionsTrack.scrollLeft + 450;
+    };
+}
+if (sectionsPrev) {
+    sectionsPrev.onclick = function() {
+        sectionsTrack.scrollLeft = sectionsTrack.scrollLeft - 450;
+    };
+}
 
-let scheduleTrack = document.querySelector('.schedule-slider-track');
-let scheduleNext = document.querySelector('.schedule .next-btn');
-let schedulePrev = document.querySelector('.schedule .prev-btn');
+const scheduleTrack = document.querySelector('.schedule-slider-track');
+const scheduleNext = document.querySelector('.schedule .next-btn');
+const schedulePrev = document.querySelector('.schedule .prev-btn');
 
-scheduleNext.onclick = function() {
-    scheduleTrack.scrollLeft += 450;
-};
-schedulePrev.onclick = function() {
-    scheduleTrack.scrollLeft -= 450;
-};
+if (scheduleNext) {
+    scheduleNext.onclick = function() {
+        scheduleTrack.scrollLeft = scheduleTrack.scrollLeft + 450;
+    };
+}
+if (schedulePrev) {
+    schedulePrev.onclick = function() {
+        scheduleTrack.scrollLeft = scheduleTrack.scrollLeft - 450;
+    };
+}
 
-// 2. Открытие модальных окон
-let openButtons = document.querySelectorAll('.open-modal-btn');
+
+// ==========================================
+// 2. ОТКРЫТИЕ ОКОШЕК ПО КНОПКАМ
+// ==========================================
+const openButtons = document.querySelectorAll('.open-modal-btn');
 
 for (let i = 0; i < openButtons.length; i++) {
-    openButtons[i].onclick = function() {
-        let modalId = openButtons[i].getAttribute('data-target');
-        document.getElementById(modalId).classList.add('is-open');
-    };
-}
+    const button = openButtons[i];
 
-// 3. Закрытие модальных окон по крестику и фону
-let closeButtons = document.querySelectorAll('.close-modal-btn');
-let modals = document.querySelectorAll('.modal');
-
-for (let i = 0; i < closeButtons.length; i++) {
-    closeButtons[i].onclick = function() {
-        for (let j = 0; j < modals.length; j++) {
-            modals[j].classList.remove('is-open');
+    button.onclick = function() {
+        const modalId = button.getAttribute('data-target');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('is-open');
         }
     };
 }
+
+
+// ==========================================
+// 3. ЗАКРЫТИЕ ОКОШЕК (КРЕСТИК И ТЁМНЫЙ ФОН(темно-розовый))
+// ==========================================
+const modals = document.querySelectorAll('.modal');
 
 for (let i = 0; i < modals.length; i++) {
-    modals[i].onclick = function(event) {
-        if (event.target === modals[i]) {
-            modals[i].classList.remove('is-open');
+    const modal = modals[i];
+
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.classList.remove('is-open');
+        }
+        if (event.target.classList.contains('close-modal-btn')) {
+            modal.classList.remove('is-open');
         }
     };
 }
 
-// 4. Боковое меню
-let sideMenu = document.getElementById('side-menu');
-let burgerBtn = document.querySelector('.burger-btn');
-let closeMenuBtn = document.getElementById('close-menu-btn');
 
-burgerBtn.onclick = function() {
-    sideMenu.classList.add('is-open');
-};
+// ==========================================
+// 4. БОКОВОЕ МЕНЮ В ШАПКЕ
+// ==========================================
+const sideMenu = document.getElementById('side-menu');
+const burgerBtn = document.querySelector('.burger-btn');
+const closeMenuBtn = document.querySelector('#close-menu-btn');
 
-closeMenuBtn.onclick = function() {
-    sideMenu.classList.remove('is-open');
-};
+if (burgerBtn) {
+    burgerBtn.onclick = function() {
+        sideMenu.classList.add('is-open');
+    };
+}
+
+if (closeMenuBtn) {
+    closeMenuBtn.onclick = function() {
+        sideMenu.classList.remove('is-open');
+    };
+}
+
