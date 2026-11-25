@@ -634,14 +634,14 @@ nav ul a:hover {
 .section-card h3 {
     font-size: 22px;
     font-weight: 700;
-    color: var(--color-pink); /* #F90083 */
+    color: var(--color-pink);
     margin-bottom: 10px;
 }
 
 .section-card p {
     font-size: 14px;
     line-height: 1.5;
-    color: var(--color-text); /* #6B3040 */
+    color: var(--color-text);
     margin-bottom: auto;
 }
 
@@ -658,7 +658,7 @@ nav ul a:hover {
 }
 
 .section-card .open-modal-btn:hover {
-    color: var(--color-crimson); /* #BC1B28 */
+    color: var(--color-crimson);
 }
 
 
@@ -725,7 +725,6 @@ nav ul a:hover {
     position: relative;
     width: 100%;
     max-width: 600px;
-    /* aspect-ratio: 600 / 390;  */
 }
 
 /* Велосипед — слева снизу */
@@ -770,7 +769,7 @@ nav ul a:hover {
     max-width: 720px;
     font-size: clamp(14px, 1.2vw, 16px);
     line-height: 1.6;
-    color: var(--color-text); /* #6B3040 */
+    color: var(--color-text);
     margin-bottom: 20px;
 }
 
@@ -793,7 +792,7 @@ nav ul a:hover {
     width: min(350px, 85vw);
     min-height: 262px;
     flex-shrink: 0;
-    background-color: var(--color-bg-light); /* #FEFEFE */
+    background-color: var(--color-bg-light);
     border: 1.5px solid transparent;
     border-radius: 20px;
     padding: clamp(22px, 3vw, 30px) clamp(20px, 3vw, 35px);
@@ -813,7 +812,7 @@ nav ul a:hover {
     text-align: center;
     font-size: clamp(20px, 2vw, 22px);
     font-weight: 800;
-    color: var(--color-pink); /*#F90083 */
+    color: var(--color-pink);
     margin-bottom: 22px;
     text-transform: uppercase;
 }
@@ -828,14 +827,14 @@ nav ul a:hover {
 .day-col ul li {
     font-size: 14px;
     line-height: 1.5;
-    color: var(--color-text); /* #6B3040 */
+    color: var(--color-text);
 }
 
-/* Первая строчка (время) выделена жирным */
+/* Первая строчка жирным */
 .day-col ul li::first-line {
     font-weight: 700;
     font-size: 15px;
-    color: var(--color-text); /*  #6B3040 */
+    color: var(--color-text);
 }
 
 
@@ -1203,9 +1202,15 @@ footer {
     color: #ffffff;
 }
 
+
 .modal-content h2 {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: var(--color-pink);         
+    width: 100%;
     text-align: center;
-    margin-bottom: clamp(16px, 2.5vw, 24px);
+    font-size: clamp(20px, 2.5vw, 26px);
+    margin: 0 auto clamp(16px, 2.5vw, 24px);
 }
 
 /* Текстовая часть */
