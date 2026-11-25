@@ -1132,33 +1132,28 @@ footer {
 .modal {
     position: fixed;
     inset: 0;
-    background-color: rgba(107, 48, 64, 0.55); 
+    background: rgba(107, 48, 64, 0.55);
     backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: clamp(12px, 3vw, 24px);
+    padding: 16px;
     z-index: 1200;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
-
 .modal.is-open {
     opacity: 1;
     pointer-events: auto;
 }
-
-/* Белая карточка с резиновыми отступами */
 .modal-content {
-    background-color: var(--color-bg-light); /* #FEFEFE */
+    background: linear-gradient(180deg, #FFF7F9 0%, #FFEFF3 100%);
     width: 100%;
     max-width: 780px;
     max-height: 90vh;
     overflow-y: auto;
-    border-radius: var(--border-radius-lg);
-    padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 45px);
-    position: relative;
+    padding-bottom: clamp(24px, 4vw, 36px);
     box-shadow: 0 20px 60px rgba(107, 48, 64, 0.25);
     transform: translateY(20px);
     transition: transform 0.3s ease;
@@ -1168,26 +1163,29 @@ footer {
     transform: translateY(0);
 }
 
+/* Белая шапка модалки */
 .modal-header {
+    background: #ffffff;
+    padding: 14px clamp(20px, 4vw, 35px);
+    border-radius: 24px 24px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
-
-.modal-logo {
-    height: clamp(28px, 3.5vw, 36px);
+.modal-header img {
+    height: clamp(32px, 3.5vw, 42px);
     width: auto;
 }
 
-/* Круглый крестик закрытия */
+
 .close-modal-btn {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border: 1.5px solid rgba(107, 48, 64, 0.2);
-    background-color: var(--color-bg-light);
-    color: var(--color-pink); /*  #F90083 */
+    background: #ffffff;
+    color: var(--color-pink);
     font-size: 24px;
     line-height: 1;
     display: flex;
@@ -1197,28 +1195,28 @@ footer {
 }
 
 .close-modal-btn:hover {
-    background-color: var(--color-pink);
+    background: var(--color-pink);
     border-color: var(--color-pink);
     color: #ffffff;
 }
-
-
 .modal-content h2 {
     background: none;
     -webkit-text-fill-color: initial;
-    color: var(--color-pink);         
+    color: var(--color-pink);
+    text-transform: none;
     width: 100%;
     text-align: center;
     font-size: clamp(20px, 2.5vw, 26px);
-    margin: 0 auto clamp(16px, 2.5vw, 24px);
+    padding: 0 clamp(20px, 4vw, 40px);
+    margin-bottom: 20px;
 }
 
-/* Текстовая часть */
 .modal-body {
+    padding: 0 clamp(20px, 4vw, 40px);
     font-size: clamp(13px, 1.1vw, 14px);
     line-height: 1.6;
-    color: var(--color-text); /*  #6B3040 */
-    margin-bottom: clamp(20px, 3vw, 30px);
+    color: var(--color-text);
+    margin-bottom: 24px;
 }
 
 .modal-body p {
@@ -1227,13 +1225,12 @@ footer {
 
 .modal-list-title {
     font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin: 14px 0 8px;
 }
 
 .modal-team-list {
     padding-left: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .modal-team-list li {
@@ -1252,34 +1249,28 @@ footer {
 
 .modal-coach {
     font-weight: 600;
-    color: var(--color-text);
 }
 
-/* Фото команды и  иконка в углу */
+/* Фото и декоративная иконка */
 .modal-media {
     position: relative;
     max-width: 480px;
     margin: 0 auto;
-    padding-right: clamp(20px, 4vw, 40px);
+    padding: 0 clamp(20px, 4vw, 40px);
 }
-
 .modal-photo {
     width: 100%;
-    height: auto;
     border-radius: 16px;
     box-shadow: var(--shadow-soft);
 }
-
 .modal-decor-icon {
     position: absolute;
-    right: -10px;
+    right: 10px;
     bottom: -10px;
     width: clamp(75px, 12vw, 120px);
     height: clamp(75px, 12vw, 120px);
     object-fit: contain;
     pointer-events: none;
 }
-
-
 
 
