@@ -1,0 +1,52 @@
+/* ==========================================================================
+   АДАПТАЦИЯ
+   ========================================================================== */
+@media (max-width: 960px) {
+    /* Убрала горизонтальное меню в шапке,остаётся кнопка-бургер */
+    header nav {
+        display: none;
+    }
+
+    /* Убрала картинки */
+    .intro-ball-decor {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    /* В баннере только градиент и звёздочки остались */
+    .hero {
+        background-image: url('/img/stars.svg'), var(--gradient-primary);
+        background-position: right 10% top 15%, center center;
+        background-repeat: no-repeat;
+        background-size: 90px auto, cover;
+        aspect-ratio: auto;
+        min-height: 360px;
+        padding: 60px var(--page-gutter);
+    }
+
+    .section-card img,       /* Иконки в карточках секций */
+    .achievements-images,    /* Велосипед и кубок */
+    .join-illustration,      /* Персонаж у формы записи */
+    .footer-runner {         /* Бегун в подвале */
+        display: none;
+    }
+    .sections-slider-track {
+        padding-top: 10px;
+        padding-left: 4px;
+    }
+
+    .section-card {
+        min-height: 220px;
+    }
+    .footer-middle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 540px) {
+    .header-phone span {
+        display: none;
+    }
+}
