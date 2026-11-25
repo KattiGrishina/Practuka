@@ -380,7 +380,7 @@ nav ul a:hover {
    ========================================================================== */
 
 .hero {
-    background-image: url('/img/Banner.svg'); 
+    background-image: url('img/Banner.svg'); 
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover; 
